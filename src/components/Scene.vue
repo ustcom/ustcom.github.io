@@ -30,17 +30,25 @@
                 }
 
                 this.currentTime += step;
+            },
+            addProps(components) {
+                components.map(children => {
+                    const props = path(['componentOptions', 'propsData'], children);
+                    const childs = path(['componentOptions', 'children'], children);
+                    if (childs) {
+                        this.addProps(childs);
+                    }
+
+                    if (!props) {
+                        return;
+                    }
+
+                    children.componentOptions.propsData.currentTime = this.currentTime;
+                });
             }
         },
         render(h) {
-            this.$slots.default.map(children => {
-                const props = path(['componentOptions', 'propsData'], children);
-                if (!props) {
-                    return;
-                }
-                children.componentOptions.propsData.currentTime = this.currentTime;
-            });
-
+            this.addProps(this.$slots.default);
             return h('div', {class: 'scene'}, this.$slots.default);
         }
     };

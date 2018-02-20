@@ -41,6 +41,22 @@
                                 to: 300
                             }
                         }
+                    },
+                    {
+                        time: {
+                            from: 50,
+                            duration: 10
+                        },
+                        properties: {
+                            translateX: {
+                                from: 300,
+                                to: 200
+                            },
+                            opacity: {
+                                from: 1,
+                                to: 0
+                            }
+                        }
 
                     }
                 ]
@@ -55,6 +71,7 @@
                     position: 'absolute',
                     'transform-origin': `${this.translateX}px calc(${this.translateY}vh - 112px)`,
                     'font-size': `${this.fontSize}px`,
+                    opacity: this.opacity
                 }
             }
         }

@@ -31,6 +31,18 @@
                                 to: 1
                             }
                         }
+                    },
+                    {
+                        time: {
+                            from: 50,
+                            duration: 10
+                        },
+                        properties: {
+                            translateX: {
+                                from: 300,
+                                to: 200
+                            }
+                        }
                     }
                 ]
             }
