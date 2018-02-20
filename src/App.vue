@@ -1,28 +1,39 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <div class="container h-100">
+        <Scene
+            :duration="120"
+        >
+            <Greeting/>
+            <SkipButtons/>
+            <WhyWe/>
+        </Scene>
+    </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+    import Scene from './components/Scene';
+    import Greeting from './components/Greeting';
+    import WhyWe from './components/WhyWe';
+    import SkipButtons from './components/SkipButtons';
 
-export default {
-  name: 'app',
-  components: {
-    HelloWorld
-  }
-}
+    export default {
+        name: 'app',
+        components: {
+            Scene,
+            Greeting,
+            WhyWe,
+            SkipButtons
+        }
+    }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+    @import '~bootstrap/dist/css/bootstrap.css';
+    @import url('https://fonts.googleapis.com/css?family=Oswald');
+
+    body, html {
+        font-family: 'Oswald', sans-serif;
+        width: 100%;
+        height: 100%;
+    }
 </style>
