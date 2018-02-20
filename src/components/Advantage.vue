@@ -8,7 +8,6 @@
 </template>
 
 <script>
-    //TODO: размытость, неустойчивость, умалчивание
     import {animationable} from "../mixins/animationable";
 
     export default {

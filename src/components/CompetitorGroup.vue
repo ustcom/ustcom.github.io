@@ -1,6 +1,6 @@
 <template>
-    <div class="advantage-group" :style="style">
-        <h2 class="header">Почему мы?</h2>
+    <div class="competitor-group" :style="style">
+        <h2 class="header">А не они?</h2>
         <slot></slot>
     </div>
 </template>
@@ -10,35 +10,24 @@
 
     export default {
         mixins: [animationable],
-        name: "advantages-group",
+        name: "competitor-group",
         data() {
             return {
                 opacity: 0,
-                translateX: 600,
+                translateX: 900,
                 animation: [{
-                    time: {
-                        from: 15,
-                        duration: 10
-                    },
-                    properties: {
-                        translateX: {
-                            from: 600,
-                            to: 300
-                        },
-                        opacity: {
-                            from: 0,
-                            to: 1
-                        }
-                    }
-                }, {
                     time: {
                         from: 50,
                         duration: 10
                     },
                     properties: {
                         translateX: {
-                            from: 300,
-                            to: 200
+                            from: 900,
+                            to: 650
+                        },
+                        opacity: {
+                            from: 0,
+                            to: 1
                         }
                     }
                 }]
@@ -57,11 +46,6 @@
 </script>
 
 <style scoped>
-    .advantage-group {
-        height: 100%;
-        position: absolute;
-    }
-
     .header {
         font-size: 46px;
     }
